@@ -1,0 +1,170 @@
+/* Custom Talkdesk Purple Color Palette */
+:root {
+    --talkdesk-purple: #5b2fa0; /* A rich, deep purple */
+    --talkdesk-light: #f5f0fb; /* Very light background */
+    --talkdesk-accent: #7a46c1; /* Lighter purple for buttons/accents */
+    --color-green: #4CAF50; /* Green (Time is good) */
+    --color-yellow: #FFC107; /* Yellow (Warning) */
+    --color-red: #F44336; /* Red (Urgent) */
+    --color-dark: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--talkdesk-light);
+    color: var(--color-dark);
+}
+
+/* --- CONTROL PANEL STYLES --- */
+#control-panel {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--talkdesk-purple);
+    border-bottom: 2px solid var(--talkdesk-accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#total-time-display {
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 1em;
+}
+
+.topic-item label {
+    flex-grow: 1;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.time-input {
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.topic-name-wrap {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Button Styling */
+.button-group button, #reset-times-btn {
+    background-color: var(--talkdesk-accent);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-group button:hover, #reset-times-btn:hover {
+    background-color: var(--talkdesk-purple);
+}
+
+/* Embedded Timer Status */
+#embedded-timer-status {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid var(--talkdesk-purple);
+    border-radius: 8px;
+    text-align: center;
+}
+
+#embedded-time {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--talkdesk-purple);
+}
+
+/* --- FULL-SCREEN DISPLAY STYLES (Used in the hidden div for the second screen) --- */
+
+.hidden {
+    display: none !important;
+}
+
+/* This targets the second screen view when opened directly via the URL */
+.full-screen-display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+#visual-indicator {
+    /* Takes full screen */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#screen-timer-text {
+    font-size: 15vw;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#screen-topic-text {
+    font-size: 4vw;
+    color: white;
+}
+
+/* --- CONDITIONAL COLORS --- */
+
+.green { background-color: var(--color-green); }
+.yellow { background-color: var(--color-yellow); }
+.red { background-color: var(--color-red); }
+
+.time-up {
+    background-color: black;
+    animation: flash-red 1s infinite alternate;
+}
+
+@keyframes flash-red {
+    from { background-color: black; }
+    to { background-color: var(--color-red); }
+}

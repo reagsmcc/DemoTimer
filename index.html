@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Talkdesk Demo Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="control-panel">
+        <h2>Demo Topic Timer Setup</h2>
+        <div id="total-time-display">
+            Total Demo Time: <span id="total-minutes">0</span> minutes
+        </div>
+        <button id="reset-times-btn">Reset All Times to 0</button>
+        <form id="topic-form">
+            </form>
+        
+        <div class="button-group">
+            <button id="start-demo-btn">Start Full Demo Sequence</button>
+            <button id="open-display-btn">Open Full-Screen Timer URL</button>
+        </div>
+
+        <div id="embedded-timer-status">
+            <h3 id="current-topic-name">Ready</h3>
+            <div id="embedded-time">00:00</div>
+        </div>
+    </div>
+
+    <div id="timer-screen" class="full-screen-display hidden">
+        <div id="visual-indicator">
+            <div id="screen-timer-text">00:00</div>
+            <div id="screen-topic-text">Ready</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
