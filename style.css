@@ -1,4 +1,119 @@
-/* Add to your existing style.css file */
+/* Custom Talkdesk Purple Color Palette */
+:root {
+    --talkdesk-purple: #5b2fa0;
+    --talkdesk-light: #f5f0fb;
+    --talkdesk-accent: #7a46c1;
+    --color-green: #4CAF50;
+    --color-yellow: #FFC107;
+    --color-red: #F44336;
+    --color-dark: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--talkdesk-light);
+    color: var(--color-dark);
+}
+
+/* --- CONTROL PANEL STYLES --- */
+#control-panel {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--talkdesk-purple);
+    border-bottom: 2px solid var(--talkdesk-accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#total-time-display {
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* *** THE LAYOUT FIX *** */
+.topic-item {
+    display: flex;
+    justify-content: space-between; /* Pushes name/checkbox to left, time to right */
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 1em;
+}
+
+.topic-name-wrap {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allows name wrap to take up available space */
+}
+
+.topic-name-wrap label {
+    margin-left: 10px;
+    cursor: pointer;
+}
+/* *** END LAYOUT FIX *** */
+
+
+.time-input {
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/* Button Styling */
+.button-group button, #reset-times-btn {
+    background-color: var(--talkdesk-accent);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-group button:hover, #reset-times-btn:hover {
+    background-color: var(--talkdesk-purple);
+}
+
+/* Embedded Timer Status */
+#embedded-timer-status {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid var(--talkdesk-purple);
+    border-radius: 8px;
+    text-align: center;
+}
+
+#embedded-time {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--talkdesk-purple);
+}
+
+
+/* --- AGENDA STYLING (Added from previous step) --- */
 
 #live-agenda-container {
     margin-top: 30px;
@@ -21,31 +136,4 @@
 }
 
 #live-agenda-list li {
-    padding: 5px 0;
-    font-size: 1.1em;
-    border-bottom: 1px dotted #eee;
-    display: flex;
-    justify-content: space-between;
-}
-
-.agenda-status {
-    font-weight: bold;
-    min-width: 60px;
-    text-align: right;
-}
-
-/* Status colors */
-.status-active {
-    color: var(--talkdesk-accent);
-    font-style: italic;
-    font-weight: bold;
-}
-
-.status-done {
-    color: var(--color-green);
-    text-decoration: line-through;
-}
-
-.status-pending {
-    color: #999;
-}
+    padding
